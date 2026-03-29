@@ -1,0 +1,20 @@
+{
+  "_comment": "GitHub MCP — PR management, issue tracking, and code search. Included in base because every project uses git and most use GitHub for collaboration.",
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      },
+      "scopes": [
+        "repo:read",
+        "repo:write",
+        "issues:read",
+        "issues:write",
+        "pull_requests:read",
+        "pull_requests:write"
+      ]
+    }
+  }
+}

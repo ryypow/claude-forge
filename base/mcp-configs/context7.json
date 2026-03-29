@@ -1,0 +1,9 @@
+{
+  "_comment": "Context7 MCP — live documentation lookup across languages and frameworks. Gives Claude access to up-to-date docs for libraries and APIs instead of relying on training data.",
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"]
+    }
+  }
+}

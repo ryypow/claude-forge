@@ -1,0 +1,34 @@
+# Work in progress
+_wip/
+TODO.md
+
+# Scratch/ignore folder
+ignore/
+
+# Tool output
+output.txt
+
+# Node
+node_modules/
+package-lock.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment and secrets
+.env
+.env.*
+*.key
+*.pem
+credentials.json
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Claude session files
+.claude/session-log.md
