@@ -1,0 +1,23 @@
+{
+  "_comment": "arXiv: primary academic preprint source for deep-research. Provides paper search by category and keyword, abstract fetching, and metadata retrieval. No API key required for basic access. Rate limit: 3 requests/second. This MCP is the default source for all /deep-dive runs.",
+  "mcpServers": {
+    "arxiv": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"],
+      "env": {}
+    }
+  },
+  "_usage": {
+    "search_endpoint": "https://export.arxiv.org/api/query",
+    "search_params": {
+      "search_query": "Use field prefixes: ti: (title), abs: (abstract), all: (all fields), cat: (category)",
+      "start": "Pagination offset (default 0)",
+      "max_results": "Results per page (default 50, max 2000)",
+      "sortBy": "relevance | lastUpdatedDate | submittedDate",
+      "sortOrder": "descending | ascending"
+    },
+    "response_format": "Atom XML — parse with xml2js or similar",
+    "fetch_paper": "https://arxiv.org/abs/{arxiv_id} for abstract page, https://arxiv.org/pdf/{arxiv_id} for PDF",
+    "rate_limit": "3 requests per second; add 0.35s delay between requests"
+  }
+}

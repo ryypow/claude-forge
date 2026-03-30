@@ -1,0 +1,86 @@
+# deep-research — source configuration
+#
+# This file defines which sources are searched during /deep-dive runs.
+# The source-searcher agent reads this file at runtime.
+#
+# To add a new source: uncomment one of the examples below and fill in the details,
+# or run /add-source for an interactive setup with connection testing.
+#
+# Supported source types:
+#   arxiv-api           — arXiv official API (no key required)
+#   semantic-scholar-api — Semantic Scholar API (optional key for higher rate limits)
+#   rest-api            — any HTTP API that returns JSON
+#   local-folder        — local directory of PDFs or markdown files
+#   rss-feed            — RSS/Atom feed (arXiv category feeds, journal ToC feeds, etc.)
+#
+# Credential convention: use ${ENV_VAR_NAME} syntax — never hardcode API keys.
+# See skills/source-configuration/SKILL.md for full field documentation.
+
+sources:
+
+  # ── arXiv (primary source, enabled by default) ──────────────────────────
+  - name: arxiv
+    type: arxiv-api
+    base_url: https://export.arxiv.org/api/query
+    # Customize default categories. topic-scoper may override per sub-theme.
+    default_categories:
+      - cs.AI
+      - cs.LG
+      - cs.CL
+      - cs.MA
+      - cs.CR
+    max_results_per_query: 50
+    enabled: true
+
+  # ── Semantic Scholar (disabled — enable after setting API key) ───────────
+  # Adds citation counts, author metadata, and papers not on arXiv.
+  # Works without an API key at ~100 requests/5min; key increases limits.
+  #
+  # - name: semantic-scholar
+  #   type: semantic-scholar-api
+  #   api_key: ${SEMANTIC_SCHOLAR_API_KEY}
+  #   max_results_per_query: 20
+  #   enabled: false
+
+  # ── Brave Search (disabled — enable after setting API key) ──────────────
+  # Good for GitHub repos, ACL Anthology, OpenReview, and gray literature.
+  #
+  # - name: brave-search
+  #   type: brave-search
+  #   api_key: ${BRAVE_API_KEY}
+  #   enabled: false
+
+  # ── Custom REST API (example) ────────────────────────────────────────────
+  # Replace with your internal or preferred paper API.
+  #
+  # - name: my-api
+  #   type: rest-api
+  #   search_url: https://api.example.com/papers/search?q={query}&limit=20
+  #   fetch_url: https://api.example.com/papers/{id}
+  #   api_key: ${MY_API_KEY}
+  #   response_mapping:
+  #     title: data.title
+  #     source_url: data.url
+  #     abstract: data.abstract
+  #     id: data.doi
+  #     date: data.published_at
+  #   enabled: false
+
+  # ── Local folder (example) ───────────────────────────────────────────────
+  # Scan a local directory for PDFs, markdown notes, or downloaded papers.
+  #
+  # - name: my-papers
+  #   type: local-folder
+  #   path: ~/papers/
+  #   file_types: [pdf, md]
+  #   recursive: false
+  #   enabled: false
+
+  # ── arXiv category RSS feed (example) ────────────────────────────────────
+  # Subscribe to daily new submissions in a specific arXiv category.
+  #
+  # - name: arxiv-cs-ai-daily
+  #   type: rss-feed
+  #   url: https://rss.arxiv.org/rss/cs.AI
+  #   max_items: 30
+  #   enabled: false

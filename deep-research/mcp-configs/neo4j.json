@@ -1,0 +1,25 @@
+{
+  "_comment": "Neo4j: structural knowledge graph for deep-research. Stores Paper, Author, and Topic nodes with CITES, AUTHORED_BY, TAGGED_WITH, and RELATED_TO relationships. Enables graph traversal queries: finding related papers, citation chains, co-author networks, and thematic clusters. Not in base because it is specific to knowledge persistence workflows.",
+  "mcpServers": {
+    "neo4j": {
+      "command": "npx",
+      "args": ["-y", "@neo4j/mcp-server"],
+      "env": {
+        "NEO4J_URI": "${NEO4J_URI}",
+        "NEO4J_USERNAME": "${NEO4J_USER}",
+        "NEO4J_PASSWORD": "${NEO4J_PASSWORD}"
+      }
+    }
+  },
+  "_env_vars": {
+    "NEO4J_URI": "bolt://localhost:7687 (or your Neo4j instance URI)",
+    "NEO4J_USER": "neo4j",
+    "NEO4J_PASSWORD": "Set in .env — never hardcode"
+  },
+  "_scopes": [
+    "cypher:read",
+    "cypher:write",
+    "schema:read"
+  ],
+  "_docker_image": "neo4j:5 — see scripts/setup-env.js for Docker Compose setup"
+}

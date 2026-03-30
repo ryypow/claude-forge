@@ -1,0 +1,19 @@
+{
+  "_comment": "Brave Search: fallback web search for non-arXiv sources. Used by source-searcher when sources.yml has Brave enabled — useful for finding GitHub repositories, technical reports, ACL Anthology papers, and gray literature that is not indexed by arXiv or Semantic Scholar. Requires a Brave Search API key.",
+  "mcpServers": {
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+      }
+    }
+  },
+  "_env_vars": {
+    "BRAVE_API_KEY": "Set in .env — obtain from brave.com/search/api"
+  },
+  "_scopes": [
+    "web:search"
+  ],
+  "_usage": "Filter results to academic domains in source-searcher: site:arxiv.org OR site:aclanthology.org OR site:openreview.net OR site:proceedings.mlr.press OR site:github.com"
+}

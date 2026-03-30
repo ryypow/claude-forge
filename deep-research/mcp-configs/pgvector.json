@@ -1,0 +1,25 @@
+{
+  "_comment": "pgvector: semantic similarity store for deep-research. Stores vector embeddings of paper abstracts and summaries. Enables semantic search: finding papers conceptually similar to a query, clustering papers by topic, and hybrid queries combining graph traversal with embedding similarity. Not in base because it is specific to knowledge persistence workflows.",
+  "mcpServers": {
+    "pgvector": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres"],
+      "env": {
+        "POSTGRES_CONNECTION_STRING": "${PGVECTOR_URL}"
+      }
+    }
+  },
+  "_env_vars": {
+    "PGVECTOR_URL": "postgresql://postgres:password@localhost:5432/deep_research (or your pgvector instance URL)"
+  },
+  "_scopes": [
+    "sql:read",
+    "sql:write"
+  ],
+  "_docker_image": "pgvector/pgvector:pg16 — see scripts/setup-env.js for Docker Compose setup",
+  "_schema": {
+    "table": "paper_embeddings",
+    "columns": "id, paper_id, title, abstract_embedding VECTOR(1536), summary_embedding VECTOR(1536), created_at, updated_at",
+    "index": "IVFFlat cosine distance index on abstract_embedding and summary_embedding"
+  }
+}
