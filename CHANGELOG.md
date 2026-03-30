@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to claude-templates are recorded here.
+All notable changes to claude-kit are recorded here.
 Format: `[domain@version] — YYYY-MM-DD`, with Added / Changed / Removed / Security sections.
 
 ---

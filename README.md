@@ -1,9 +1,9 @@
-# Claude Forge
+# Claude Kit
 
-**Forging Claude into a specialist with domain-specific templates.**
+**Kit out Claude with domain-specific templates.**
 
 Claude Code starts every session from scratch — no memory of your stack, your conventions,
-or your workflows. Claude Forge fixes that. Pick a domain template, scaffold it into your
+or your workflows. Claude Kit fixes that. Pick a domain template, scaffold it into your
 project, and Claude is ready to work the way you work from the first prompt.
 
 Each template is a domain-specific configuration: agents specialized in the respective domain, skills that encode best practices, commands that automate common or domain-specific tasks, and hooks that catch mistakes before they happen.
