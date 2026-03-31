@@ -5,6 +5,21 @@ Format: `[domain@version] — YYYY-MM-DD`, with Added / Changed / Removed / Secu
 
 ---
 
+## [brainstorm@1.0.0] — 2026-03-31
+
+### Added
+- `brainstorm/CLAUDE.md` — domain context: 4-phase brainstorming workflow
+- `agents/architecture-scout.md` — searches arXiv, Semantic Scholar, GitHub, HuggingFace, Papers With Code for recent work
+- `agents/combination-brainstormer.md` — generates ranked novel combination ideas from scout findings (opus)
+- `agents/feasibility-checker.md` — evaluates datasets, compute, baselines, novelty, and timeline fit
+- `agents/experiment-designer.md` — produces experiment plans with baselines, ablations, metrics, and phased goals
+- `skills/source-discovery/SKILL.md` — platform-specific search patterns for all 5 major ML/AI sources
+- `skills/topic-landscape/SKILL.md` — methodology for mapping problem spaces, identifying gaps, cross-domain transfer
+- `commands/brainstorm.md` — `/brainstorm` full pipeline command
+- `scripts/scaffold.sh` — scaffold base + brainstorm into any project
+
+---
+
 ## [deep-research@1.0.0] — 2026-03-26
 
 ### Added

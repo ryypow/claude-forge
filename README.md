@@ -33,6 +33,8 @@ If the domain and base disagree on something, the domain wins.
 
 | Domain | Folder | What it's for |
 |---|---|---|
+| Deep Research | `deep-research/` | Topic investigation, paper analysis, knowledge graphs |
+| Brainstorm | `brainstorm/` | Project ideation — scout sources, generate novel ideas, check feasibility, design experiments |
 
 ---
 

@@ -1,6 +1,7 @@
 {
   "base": "1.1.0",
   "deep-research": "1.0.0",
+  "brainstorm": "1.0.0",
   "ml": "1.0.0",
   "devops": "1.0.0",
   "data-engineering": "1.0.0",
@@ -8,5 +9,5 @@
   "api-backend": "1.0.0",
   "frontend": "1.0.0",
   "embedded": "1.0.0",
-  "_updated": "2026-03-26"
+  "_updated": "2026-03-31"
 }
